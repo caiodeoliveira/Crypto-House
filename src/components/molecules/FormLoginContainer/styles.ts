@@ -8,10 +8,9 @@ const Form = withStyles({
     borderRadius: 5,
     display: "grid",
     gridTemplateColumns: "1fr",
-    gap: "15px",
+    gap: "50px",
     margin: "50px 0 0 0",
-    height: "180px",
-    fontSize: "30px",
+    fontSize: "27px",
     fontWeight: "bold",
   },
 })(FormControl);
