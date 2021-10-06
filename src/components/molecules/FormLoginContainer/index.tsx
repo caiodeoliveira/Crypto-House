@@ -4,7 +4,7 @@ import S from "./styles";
 const FormLoginContainer = () => {
   return (
     <S.Form>
-      <label>
+      <label className="labelx">
         Email
         <S.LoginInput id="my-input" aria-describedby="my-helper-text" />
       </label>

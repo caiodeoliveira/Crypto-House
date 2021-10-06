@@ -8,7 +8,7 @@ const Form = withStyles({
     borderRadius: 5,
     display: "grid",
     gridTemplateColumns: "1fr",
-    gap: "50px",
+    gap: "40px",
     margin: "50px 0 0 0",
     fontSize: "27px",
     fontWeight: "bold",

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors, typography, fonts } from "../../../styles/mixins";
 
 const TitleText = styled.div`
-  font-size: ${typography.modal_title};
+  font-size: ${typography.subTitle};
   font-weight: ${fonts.montserrat.bold};
   color: ${colors.body};
 `;
