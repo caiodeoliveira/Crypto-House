@@ -1,7 +1,6 @@
 import S from "./styles";
 import FormLoginContainer from "../../molecules/FormLoginContainer";
 import Footer from "../../atoms/Footer";
-import KeepConectLogin from "../../molecules/KeepConectLogin";
 
 const LoginInnerArea = () => {
   return (
@@ -9,7 +8,6 @@ const LoginInnerArea = () => {
       <S.Container>
         <FormLoginContainer />
         <Footer />
-        <KeepConectLogin />
       </S.Container>
     </>
   );

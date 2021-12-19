@@ -3,12 +3,9 @@ import TopBar from "../../atoms/TopBar";
 
 const LoginUpperArea = () => {
   return (
-    <>
+    <S.TopContainer>
       <TopBar />
-      <S.TitleText>
-        O investimento de hoje, é a base do amanhã, Bem-Vindo a CryptoHouse{" "}
-      </S.TitleText>
-    </>
+    </S.TopContainer>
   );
 };
 

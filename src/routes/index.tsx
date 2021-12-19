@@ -1,9 +1,12 @@
-import React from "react";
+import { Route, BrowserRouter } from "react-router-dom";
+import Login from "../components/templates/login";
 
-// import { Container } from './styles';
-
-const routes: React.FC = () => {
-  return <div />;
+const Routes = () => {
+  return (
+    <BrowserRouter>
+      <Route path="/" component={Login} exact />
+    </BrowserRouter>
+  );
 };
 
-export default routes;
+export default Routes;
