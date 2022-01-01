@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { colors, typography, fonts } from "../../../styles/mixins";
 
-const TitleText = styled.div`
-  font-size: ${typography.subTitle};
-  font-family: ${fonts.montserrat.bold};
-  color: ${colors.dark};
-  margin-top: 50px;
+const TopContainer = styled.div`
+  background-color: ${colors.dark};
+  border-bottom: 5px solid ${colors.dark};
+  width: 100%;
+  height: 10%;
 `;
 
 const S = {
-  TitleText,
+  TopContainer,
 };
 
 export default S;

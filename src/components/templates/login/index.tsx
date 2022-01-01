@@ -4,12 +4,10 @@ import LoginInnerArea from "../../organisms/LoginInnerArea";
 
 const Login = () => {
   return (
-    <>
-      <S.Container>
-        <LoginUpperArea />
-        <LoginInnerArea />
-      </S.Container>
-    </>
+    <S.Container>
+      <LoginUpperArea />
+      <LoginInnerArea />
+    </S.Container>
   );
 };
 

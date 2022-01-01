@@ -1,14 +1,26 @@
 import S from "./styles";
 import TopBar from "../../atoms/TopBar";
+import React from "react";
+import Button from "../../atoms/Button";
+import LoginUpperAreaProps from "./types";
 
 const LoginUpperArea = () => {
+  const [count, setCount] = React.useState<Number>(0);
+
+  const handleCount = () => {
+    setCount((count) => {
+      return count + 1;
+    });
+  };
+
   return (
-    <>
-      <TopBar />
-      <S.TitleText>
-        O investimento de hoje, é a base do amanhã, Bem-Vindo a CryptoHouse{" "}
-      </S.TitleText>
-    </>
+    <S.TopContainer>
+      <TopBar>
+        <Button onClick={handleCount} type="submit">
+          {count}
+        </Button>
+      </TopBar>
+    </S.TopContainer>
   );
 };
 

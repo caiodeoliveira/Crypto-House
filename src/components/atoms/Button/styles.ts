@@ -1,19 +1,41 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { colors } from "../../../styles/mixins";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
-const ButtonBase = styled.button `
-color: black;
-border: 2px solid #169916;
-font-size: 12px;
-min-width: 100px;
-/* font-family: */
-border-radius:3px;
-`
+// const ButtonBase = styled.button`
+//   color: ${colors.dark};
+//   border-radius: 3px;
+// `;
 
-const BoxButton = styled(ButtonBase) `
-`
- 
+const RecoverButton = withStyles({
+  root: {
+    borderRadius: 3,
+    border: `2px ${colors.primary} solid`,
+    color: "white",
+    width: "210px",
+    height: "40px",
+    padding: "20px 0 15px 0",
+    marginTop: "15px",
+  },
+})(Button);
+
+const LoginButton = withStyles({
+  root: {
+    borderRadius: 3,
+    border: `2px ${colors.primary} solid`,
+    color: "white",
+    backgroundColor: `${colors.body}`,
+    width: "210px",
+    height: "40px",
+    padding: "20px 0 15px 0",
+    marginTop: "15px",
+  },
+})(Button);
+
 const S = {
-    BoxButton
-}
+  RecoverButton,
+  LoginButton,
+};
 
-export default S
+export default S;

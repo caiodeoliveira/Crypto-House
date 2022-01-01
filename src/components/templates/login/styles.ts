@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { colors, typography, fonts } from "../../../styles/mixins";
-import bitCoinWalpapper from "../../../assets/bitCoinWalpapper.jpg";
+import Bit from "../../../assets/Bit.png";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: url(${bitCoinWalpapper});
+  background: url(${Bit});
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
+  opacity: 0.9;
 `;
 
 const TitleText = styled.div`

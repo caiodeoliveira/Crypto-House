@@ -3,16 +3,10 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { colors, typography, fonts } from "../../../styles/mixins";
 
 const TopBar = styled.div`
-  max-width: 100vw;
-  max-height: 100vh;
-  background-color: ${colors.primary};
+  background-color: ${colors.dark};
+  width: 200px;
 `;
 
-const IconsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
 const MenuIcon = styled(AiOutlineMenu)`
   min-width: 35px;
   min-height: 40px;
@@ -22,7 +16,6 @@ const MenuIcon = styled(AiOutlineMenu)`
 
 const S = {
   TopBar,
-  IconsContainer,
   MenuIcon,
 };
 

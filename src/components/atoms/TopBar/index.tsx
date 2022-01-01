@@ -1,15 +1,8 @@
 import S from "./styles";
-import CryptoCoin from "../../../assets/CryptoCoin.png";
+import TopbarProps from "./types";
 
-const TopBar = () => {
-  return (
-    <S.TopBar>
-      <S.IconsContainer>
-        <S.MenuIcon />
-        <img src={CryptoCoin} />
-      </S.IconsContainer>
-    </S.TopBar>
-  );
+const TopBar = ({ children }: TopbarProps) => {
+  return <S.TopBar>{children}</S.TopBar>;
 };
 
 export default TopBar;
