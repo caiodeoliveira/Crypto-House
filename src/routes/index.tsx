@@ -1,12 +1,12 @@
 import { Route, BrowserRouter } from "react-router-dom";
-import Home from "../components/templates/home";
 import Login from "../components/templates/login";
+
+import React from "react";
 
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path="/" component={Login} exact />
-      <Route path="/" component={Home} />
+      <Route path="/login" component={Login} />
     </BrowserRouter>
   );
 };

@@ -19,14 +19,13 @@ const FormContent = styled.div`
   align-items: center;
   max-height: 100%;
   max-width: 100%;
-  gap: 70px;
+  gap: 60px;
 `;
 
 const FormConnectBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 25px;
   font-weight: ${fonts.montserrat.bold};
 `;
 
@@ -37,7 +36,6 @@ const LoginLabel = withStyles({
     },
     "& > *": {
       fontSize: `${typography.subTitle}`,
-      minWidth: "450px",
     },
   },
 })(InputLabel);
@@ -48,6 +46,7 @@ const LoginInput = withStyles({
     fontWeight: `bold`,
     fontSize: `20px`,
     padding: "0 15px 0 15px",
+    minWidth: "500px",
   },
 })(Input);
 
