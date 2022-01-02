@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, typography, fonts } from "../../../styles/mixins";
+import { colors } from "../../../styles/mixins";
 
 const TopContainer = styled.div`
   background-color: ${colors.dark};

@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { colors } from "../../../styles/mixins";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -25,7 +24,7 @@ const LoginButton = withStyles({
     borderRadius: 3,
     border: `2px ${colors.primary} solid`,
     color: "white",
-    backgroundColor: `${colors.body}`,
+    backgroundColor: `${colors.dark}`,
     width: "210px",
     height: "40px",
     padding: "20px 0 15px 0",

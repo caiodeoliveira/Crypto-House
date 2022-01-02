@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { colors, typography, fonts } from "../../../styles/mixins";
 
 import { withStyles } from "@material-ui/core/styles";

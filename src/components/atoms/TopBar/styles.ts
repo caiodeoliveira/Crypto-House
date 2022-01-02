@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { AiOutlineMenu } from "react-icons/ai";
-import { colors, typography, fonts } from "../../../styles/mixins";
+import { colors } from "../../../styles/mixins";
 
 const TopBar = styled.div`
   background-color: ${colors.dark};
