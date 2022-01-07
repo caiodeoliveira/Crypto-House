@@ -9,10 +9,6 @@ const TopContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
-  & p: {
-    border-bottom: 1px solid white;
-  }
 `;
 
 const S = {

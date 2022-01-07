@@ -1,7 +1,14 @@
 import S from "./styles";
 import TopBar from "../../atoms/TopBar";
 import Text from "../../atoms/Text";
+import axios from "axios";
+import { useState } from "react";
+
+const baseURL = "https://api.crypto.com/";
+
 const LoginUpperArea = () => {
+  const [highlightsCoins, sethighlightsCoins] = useState<number[]>([]);
+
   return (
     <>
       <S.TopContainer>
