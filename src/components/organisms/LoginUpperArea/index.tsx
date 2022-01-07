@@ -1,13 +1,18 @@
 import S from "./styles";
 import TopBar from "../../atoms/TopBar";
 import Text from "../../atoms/Text";
-import axios from "axios";
-import { useState } from "react";
-
-const baseURL = "https://api.crypto.com/";
+import { useEffect, useState } from "react";
+import api from "../../../services/api";
 
 const LoginUpperArea = () => {
-  const [highlightsCoins, sethighlightsCoins] = useState<number[]>([]);
+  const [highlightsCoins, setHighlightsCoins] = useState<number[]>([]);
+
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setHighlightsCoins(response.data);
+      console.log(response.data);
+    });
+  }, []);
 
   return (
     <>
