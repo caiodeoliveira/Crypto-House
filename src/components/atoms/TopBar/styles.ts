@@ -4,7 +4,12 @@ import { colors } from "../../../styles/mixins";
 
 const TopBar = styled.div`
   background-color: ${colors.dark};
-  width: 200px;
+  width: 80%;
+  height: 90%;
+  border-top: 0.3px solid white;
+  border-bottom: 0.3px solid white;
+  border-radius: 5px;
+  margin-right: 70px;
 `;
 
 const MenuIcon = styled(AiOutlineMenu)`
