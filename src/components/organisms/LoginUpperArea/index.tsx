@@ -5,22 +5,27 @@ import { useEffect, useState } from "react";
 import api from "../../../services/api";
 
 const LoginUpperArea = () => {
-  const [highlightsCoins, setHighlightsCoins] = useState<number[]>([]);
+  const [highlightsCoins, setHighlightsCoins] = useState<any>([]);
 
   useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setHighlightsCoins(response.data);
-      console.log(response.data);
-    });
-  }, []);
+    api
+      .get("/v1/ticker")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log("Ocorreu um erro na requisição !:" + err);
+      });
+  });
 
   return (
     <>
       <S.TopContainer>
         <Text type={"input_label"}>{"2.0.0"}</Text>
-        <TopBar></TopBar>
+        <TopBar>{highlightsCoins}</TopBar>
       </S.TopContainer>
     </>
   );
 };
+
 export default LoginUpperArea;
