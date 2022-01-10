@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://www.coingecko.com/api/documentations/v3/swagger.json",
+  baseURL: "https://api.coingecko.com/api/v3/coins",
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
     "Access-Control-Allow-Methods": "POST, GET,",
