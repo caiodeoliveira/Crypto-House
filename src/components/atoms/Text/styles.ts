@@ -40,6 +40,12 @@ const LoginProblemLabel = styled.div`
   color: ${colors.body};
 `;
 
+const CoinPriceLabel = styled.p`
+  font-size: ${typography.modal_subtitle2};
+  font-weight: ${fonts.montserrat.normal};
+  color: ${colors.body};
+`;
+
 const S = {
   TitleText,
   SubTitleText,
@@ -47,6 +53,7 @@ const S = {
   KeepConnectLabel,
   LoginProblemLabel,
   FooterText,
+  CoinPriceLabel,
 };
 
 export default S;

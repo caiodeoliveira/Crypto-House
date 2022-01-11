@@ -4,7 +4,7 @@ import { colors } from "../../../styles/mixins";
 const TopContainer = styled.div`
   background-color: ${colors.dark};
   width: 100%;
-  height: 15%;
+  height: 25%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -22,19 +22,32 @@ const TrendingCoinsContainer = styled.div`
   margin-right: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
-const TrendingCoinsContent = styled.div``;
-
-const TrendingCoins = styled.img`
-  margin-left: 100px;
+const TrendingCoinsContent = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 `;
+
+const TrendingCoins = styled.img``;
+
+const TrendingName = styled.p``;
+
+const TrendingSymbol = styled.p``;
+
+const TrendingPrice = styled.p``;
 
 const S = {
   TopContainer,
   TrendingCoinsContainer,
   TrendingCoinsContent,
   TrendingCoins,
+  TrendingPrice,
+  TrendingSymbol,
+  TrendingName,
 };
 
 export default S;

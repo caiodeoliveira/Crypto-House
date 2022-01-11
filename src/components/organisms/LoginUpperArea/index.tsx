@@ -5,18 +5,31 @@ import api from "../../../services/api";
 
 const LoginUpperArea = () => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
+  // const [trendingPrice, setTrendingPrice] = useState<any>([]);
 
   useEffect(() => {
     api
-      .get("")
+      .get("/search/trending")
       .then((response) => {
-        console.log(response.data.coins);
+        console.log(response.data);
         setTrendingCoins(response.data.coins);
       })
       .catch((err) => {
         console.log("Ocorreu um erro na requisição !:" + err);
       });
   }, []);
+
+  // useEffect(() => {
+  //   api
+  //     .get("")
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setTrendingPrice(response.data.coins);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Ocorreu um erro na requisição !:" + err);
+  //     });
+  // }, []);
 
   return (
     <>
@@ -30,6 +43,19 @@ const LoginUpperArea = () => {
                   src={crypto.item.small}
                   alt="trending cryptos"
                 />
+                <S.TrendingSymbol>
+                  <Text
+                    type={"paragraph_text"}
+                  >{`(  ${crypto.item.symbol} )`}</Text>
+                </S.TrendingSymbol>
+                <S.TrendingName>
+                  <Text type={"paragraph_text"}>{`${crypto.item.slug}`}</Text>
+                </S.TrendingName>
+                <S.TrendingPrice>
+                  <Text type={"paragraph_text"}>
+                    {` BTC ${crypto.item.price_btc.toFixed(17)}`}
+                  </Text>
+                </S.TrendingPrice>
               </S.TrendingCoinsContent>
             ))}
         </S.TrendingCoinsContainer>
