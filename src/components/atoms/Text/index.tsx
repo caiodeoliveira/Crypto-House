@@ -16,6 +16,8 @@ const Text = ({ type, children }: TextProps) => {
         return <S.TitleText>{children}</S.TitleText>;
       case "footer":
         return <S.FooterText>{children}</S.FooterText>;
+      case "paragraph_text":
+        return <S.CoinPriceLabel>{children}</S.CoinPriceLabel>;
     }
   };
   return selectType();

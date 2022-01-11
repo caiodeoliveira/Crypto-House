@@ -4,7 +4,8 @@ type TextTypes =
   | "input_label"
   | "keep_connect_label"
   | "login_problem_label"
-  | "footer";
+  | "footer"
+  | "paragraph_text";
 
 export default interface TextProps {
   type: TextTypes;

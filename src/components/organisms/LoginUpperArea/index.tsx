@@ -1,34 +1,64 @@
 import S from "./styles";
-import TopBar from "../../atoms/TopBar";
 import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 
 const LoginUpperArea = () => {
-  const [highlightsCoins, setHighlightsCoins] = useState<any>([]);
+  const [trendingCoins, setTrendingCoins] = useState<any>([]);
+  // const [trendingPrice, setTrendingPrice] = useState<any>([]);
 
   useEffect(() => {
     api
-      .get("")
+      .get("/search/trending")
       .then((response) => {
         console.log(response.data);
-        setHighlightsCoins(response.data);
+        setTrendingCoins(response.data.coins);
       })
       .catch((err) => {
         console.log("Ocorreu um erro na requisição !:" + err);
       });
-  });
+  }, []);
+
+  // useEffect(() => {
+  //   api
+  //     .get("")
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setTrendingPrice(response.data.coins);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Ocorreu um erro na requisição !:" + err);
+  //     });
+  // }, []);
 
   return (
     <>
       <S.TopContainer>
         <Text type={"input_label"}>{"2.0.0"}</Text>
-        <TopBar>
-          {highlightsCoins &&
-            highlightsCoins.map((cryptos: any) => (
-              <img src={cryptos.image.small} alt="Crypto Symbols" />
+        <S.TrendingCoinsContainer>
+          {trendingCoins &&
+            trendingCoins.map((crypto: any) => (
+              <S.TrendingCoinsContent>
+                <S.TrendingCoins
+                  src={crypto.item.small}
+                  alt="trending cryptos"
+                />
+                <S.TrendingSymbol>
+                  <Text
+                    type={"paragraph_text"}
+                  >{`(  ${crypto.item.symbol} )`}</Text>
+                </S.TrendingSymbol>
+                <S.TrendingName>
+                  <Text type={"paragraph_text"}>{`${crypto.item.slug}`}</Text>
+                </S.TrendingName>
+                <S.TrendingPrice>
+                  <Text type={"paragraph_text"}>
+                    {` BTC ${crypto.item.price_btc.toFixed(17)}`}
+                  </Text>
+                </S.TrendingPrice>
+              </S.TrendingCoinsContent>
             ))}
-        </TopBar>
+        </S.TrendingCoinsContainer>
       </S.TopContainer>
     </>
   );

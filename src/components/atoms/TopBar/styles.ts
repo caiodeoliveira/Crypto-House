@@ -3,13 +3,14 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { colors } from "../../../styles/mixins";
 
 const TopBar = styled.div`
+  align-items: center;
   background-color: ${colors.dark};
-  width: 80%;
-  height: 90%;
   border-top: 0.3px solid white;
   border-bottom: 0.3px solid white;
   border-radius: 5px;
-  margin-right: 70px;
+  display: flex;
+  width: 90%;
+  height: 80%;
 `;
 
 const MenuIcon = styled(AiOutlineMenu)`
