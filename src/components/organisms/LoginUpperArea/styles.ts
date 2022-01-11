@@ -12,8 +12,6 @@ const TopContainer = styled.div`
 `;
 
 const TrendingCoinsContainer = styled.div`
-  align-items: center;
-  justify-content: space-evenly;
   background-color: ${colors.dark};
   border-top: 0.3px solid white;
   border-bottom: 0.3px solid white;
@@ -22,13 +20,20 @@ const TrendingCoinsContainer = styled.div`
   width: 80%;
   height: 80%;
   margin-right: 40px;
+  display: flex;
+  align-items: center;
 `;
 
-const TrendingCoins = styled.img``;
+const TrendingCoinsContent = styled.div``;
+
+const TrendingCoins = styled.img`
+  margin-left: 100px;
+`;
 
 const S = {
   TopContainer,
   TrendingCoinsContainer,
+  TrendingCoinsContent,
   TrendingCoins,
 };
 

@@ -1,18 +1,17 @@
 import S from "./styles";
-import TopBar from "../../atoms/TopBar";
 import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 
 const LoginUpperArea = () => {
-  const [highlightsCoins, setHighlightsCoins] = useState<any>([]);
+  const [trendingCoins, setTrendingCoins] = useState<any>([]);
 
   useEffect(() => {
     api
       .get("")
       .then((response) => {
         console.log(response.data.coins);
-        setHighlightsCoins(response.data.coins);
+        setTrendingCoins(response.data.coins);
       })
       .catch((err) => {
         console.log("Ocorreu um erro na requisição !:" + err);
@@ -24,9 +23,14 @@ const LoginUpperArea = () => {
       <S.TopContainer>
         <Text type={"input_label"}>{"2.0.0"}</Text>
         <S.TrendingCoinsContainer>
-          {highlightsCoins &&
-            highlightsCoins.map((crypto: any) => (
-              <S.TrendingCoins src={crypto.item.small} alt="trending cryptos" />
+          {trendingCoins &&
+            trendingCoins.map((crypto: any) => (
+              <S.TrendingCoinsContent>
+                <S.TrendingCoins
+                  src={crypto.item.small}
+                  alt="trending cryptos"
+                />
+              </S.TrendingCoinsContent>
             ))}
         </S.TrendingCoinsContainer>
       </S.TopContainer>
