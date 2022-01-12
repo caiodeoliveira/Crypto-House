@@ -5,7 +5,7 @@ import api from "../../../services/api";
 
 const LoginUpperArea = () => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
-  // const [trendingPrice, setTrendingPrice] = useState<any>([]);
+  const [price, setPrice] = useState<any>([]);
 
   useEffect(() => {
     api
@@ -19,17 +19,17 @@ const LoginUpperArea = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   api
-  //     .get("")
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setTrendingPrice(response.data.coins);
-  //     })
-  //     .catch((err) => {
-  //       console.log("Ocorreu um erro na requisição !:" + err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    api
+      .get("/simple/supported_vs_currencies")
+      .then((response) => {
+        console.log(response);
+        setPrice(response.data);
+      })
+      .catch((err) => {
+        console.log("Ocorreu um erro na requisição !:" + err);
+      });
+  }, []);
 
   return (
     <>
