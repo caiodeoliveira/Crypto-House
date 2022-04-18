@@ -3,7 +3,7 @@ import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 
-const LoginUpperArea = () => {
+export const LoginUpperArea = () => {
   const [trendingCoins, setTrendingCoins] = useState<string[]>([]);
 
   useEffect(() => {
@@ -50,5 +50,3 @@ const LoginUpperArea = () => {
     </>
   );
 };
-
-export default LoginUpperArea;
