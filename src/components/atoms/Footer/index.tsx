@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <S.Footer>
       <Text type="footer">
-        {"Copyright © 2010-2022 CryptoHouse Company  All rights reserved."}
+        {"Copyright © 2010-2022 CryptonPlace Company  All rights reserved."}
       </Text>
     </S.Footer>
   );

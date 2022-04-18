@@ -1,5 +1,5 @@
 import S from "./styles";
-import LoginUpperArea from "../../organisms/LoginUpperArea";
+import { LoginUpperArea } from "../../organisms/LoginUpperArea";
 import LoginInnerArea from "../../organisms/LoginInnerArea";
 
 const Login = () => {

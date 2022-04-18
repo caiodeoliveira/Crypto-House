@@ -3,9 +3,8 @@ import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 
-const LoginUpperArea = () => {
-  const [trendingCoins, setTrendingCoins] = useState<any>([]);
-  const [price, setPrice] = useState<any>([]);
+export const LoginUpperArea = () => {
+  const [trendingCoins, setTrendingCoins] = useState<string[]>([]);
 
   useEffect(() => {
     api
@@ -13,18 +12,6 @@ const LoginUpperArea = () => {
       .then((response) => {
         console.log(response.data);
         setTrendingCoins(response.data.coins);
-      })
-      .catch((err) => {
-        console.log("Ocorreu um erro na requisição !:" + err);
-      });
-  }, []);
-
-  useEffect(() => {
-    api
-      .get("/simple/supported_vs_currencies")
-      .then((response) => {
-        console.log(response);
-        setPrice(response.data);
       })
       .catch((err) => {
         console.log("Ocorreu um erro na requisição !:" + err);
@@ -63,5 +50,3 @@ const LoginUpperArea = () => {
     </>
   );
 };
-
-export default LoginUpperArea;
