@@ -1,4 +1,6 @@
-# :bar_chart: CryptoHouse
+# :bar_chart: Crypton Store
+
+# A Store to buy Cryptocurrencies
 
 ## Available Scripts
 
@@ -13,5 +15,3 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### :construction: Preparing v2.0.0
-
-### ❗ Project development paused for while, we hope back soon. :neutral_face:
