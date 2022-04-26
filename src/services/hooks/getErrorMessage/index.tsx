@@ -1,5 +1,6 @@
 export const getErrorMessage = (error: any) => {
   let errorMessage = "";
+
   if (error.response) {
     switch (error.response.status) {
       case 500:

@@ -20,6 +20,7 @@ export function* getRequestAllCoins(payload: any) {
       getRequestAllCoinsSuccess(data.data.totalPages, data.data.totalElements)
     );
   } catch (error) {
-    getRequestAllCoinsError(payload.error);
+    let errorMessage: string = getErrorMessage(error);
+    yield put(getRequestAllCoinsError(errorMessage));
   }
 }
