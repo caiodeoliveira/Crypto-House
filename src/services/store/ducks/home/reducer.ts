@@ -11,19 +11,13 @@ export function home(state = INITIAL_STATE, action: any = null) {
   return produce(state, (newState) => {
     switch (action.type) {
       case HomeTypes.GET_REQUEST_ALL_COINS:
-        {
-          newState.homeLoad = true;
-        }
+        newState.homeLoad = true;
         break;
       case HomeTypes.GET_REQUEST_ALL_COINS_SUCCESS:
-        {
-          newState.homeLoad = true;
-        }
+        newState.homeLoad = true;
         break;
       case HomeTypes.GET_REQUEST_ALL_COINS_ERROR:
-        {
-          newState.homeLoad = true;
-        }
+        newState.homeLoad = true;
         break;
     }
   });

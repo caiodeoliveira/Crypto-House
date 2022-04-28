@@ -10,3 +10,5 @@ export interface HomeState {
   allCoins: number[];
   homeLoad: boolean;
 }
+
+export interface AllCoinsState {}

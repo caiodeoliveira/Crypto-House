@@ -1,6 +1,5 @@
 import * as Effect from "redux-saga/effects";
 
-import { CartTypes } from "./cart/types";
 import { HomeTypes } from "./home/types";
 
 import { getRequestAllCoins } from "./cart/sagas";
