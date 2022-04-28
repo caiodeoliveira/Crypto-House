@@ -6,5 +6,5 @@ export enum CartTypes {
 export interface CartState {
   totalValue: number;
   amountValue: number;
-  loading: boolean;
+  Cartloading: boolean;
 }
