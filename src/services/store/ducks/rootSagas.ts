@@ -2,7 +2,7 @@ import * as Effect from "redux-saga/effects";
 
 import { HomeTypes } from "./home/types";
 
-import { getRequestAllCoins } from "./cart/sagas";
+import { getRequestAllCoins } from "./home/sagas";
 
 export default function* rootSaga(): any {
   const takeLatest: any = Effect.takeLatest;

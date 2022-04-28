@@ -8,7 +8,7 @@ const INITIAL_STATE: CartState = {
   Cartloading: false,
 };
 
-export default function cart(state = INITIAL_STATE, action: any = null) {
+export function cart(state = INITIAL_STATE, action: any = null) {
   return produce(state, (newState) => {
     switch (action.type) {
       case CartTypes.SUM_TOTAL_VALUE: {

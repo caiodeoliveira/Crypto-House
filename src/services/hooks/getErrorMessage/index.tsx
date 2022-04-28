@@ -20,6 +20,7 @@ export const getErrorMessage = (error: any) => {
   } else if (error.request) {
     errorMessage = "error.";
   } else {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     errorMessage = error.message;
   }
 };
