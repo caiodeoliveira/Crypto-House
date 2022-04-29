@@ -7,7 +7,7 @@ export const enum HomeTypes {
 }
 
 export interface HomeState {
-  allCoins: number[];
+  allCoins: any[];
   homeLoad: boolean;
 }
 

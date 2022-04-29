@@ -15,6 +15,7 @@ export function home(state = INITIAL_STATE, action: any = null) {
         break;
       case HomeTypes.GET_REQUEST_ALL_COINS_SUCCESS:
         newState.homeLoad = true;
+        newState.allCoins = action.payload.allCoins;
         break;
       case HomeTypes.GET_REQUEST_ALL_COINS_ERROR:
         newState.homeLoad = true;

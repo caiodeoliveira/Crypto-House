@@ -8,7 +8,7 @@ import rootSaga from "./ducks/rootSagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
-export interface applicationState {
+export interface ApplicationState {
   cart: CartState;
   home: HomeState;
 }

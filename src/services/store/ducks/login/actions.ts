@@ -1,14 +1,16 @@
 import { action } from "typesafe-actions";
-import { HomeTypes } from "./types";
+import { LoginTypes } from "./types";
 
-export function getRequestAllCoins() {
-  return action(HomeTypes.GET_REQUEST_ALL_COINS);
+export function getRequestTrendingCoins() {
+  return action(LoginTypes.GET_REQUEST_TRENDING_COINS);
 }
 
-export function getRequestAllCoinsSuccess() {
-  return action(HomeTypes.GET_REQUEST_ALL_COINS_SUCCESS);
+export function getRequestTrendingCoinsSuccess(trendingCoins: any) {
+  return action(LoginTypes.GET_REQUEST_TRENDING_COINS_SUCCESS, {
+    trendingCoins,
+  });
 }
 
-export function getRequestAllCoinsError(error: any) {
-  return action(HomeTypes.GET_REQUEST_ALL_COINS_ERROR, { error });
+export function getRequestTrendingCoinsError(error: any) {
+  return action(LoginTypes.GET_REQUEST_TRENDING_COINS_ERROR, { error });
 }

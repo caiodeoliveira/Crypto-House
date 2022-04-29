@@ -1,16 +1,20 @@
 import { call, put } from "redux-saga/effects";
-import { getRequestAllCoinsSuccess, getRequestAllCoinsError } from "./actions";
+import {
+  getRequestTrendingCoinsSuccess,
+  getRequestTrendingCoinsError,
+} from "./actions";
 import api from "../../../api/index";
 import { getErrorMessage } from "../../../hooks/getErrorMessage";
 
-export function* getRequestAllCoins(payload: any) {
-  const url = `/coins/list`;
+export function* getRequestTrendingCoins() {
+  const url = `search/trending`;
 
   try {
-    yield call(api.get, url);
-    yield put(getRequestAllCoinsSuccess());
+    const { data } = yield call(api.get, url);
+    yield put(getRequestTrendingCoinsSuccess(data.data));
+    console.log(data);
   } catch (error) {
     let errorMessage = getErrorMessage(error);
-    yield put(getRequestAllCoinsError(errorMessage));
+    yield put(getRequestTrendingCoinsError(errorMessage));
   }
 }

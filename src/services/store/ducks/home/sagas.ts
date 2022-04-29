@@ -7,8 +7,9 @@ export function* getRequestAllCoins(payload: any) {
   const url = `/coins/list`;
 
   try {
-    yield call(api.get, url);
-    yield put(getRequestAllCoinsSuccess());
+    const { data } = yield call(api.get, url);
+    yield put(getRequestAllCoinsSuccess(data.data));
+    console.log(data);
   } catch (error) {
     let errorMessage = getErrorMessage(error);
     yield put(getRequestAllCoinsError(errorMessage));

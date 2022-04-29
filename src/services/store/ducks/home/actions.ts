@@ -5,8 +5,8 @@ export function getRequestAllCoins() {
   return action(HomeTypes.GET_REQUEST_ALL_COINS);
 }
 
-export function getRequestAllCoinsSuccess() {
-  return action(HomeTypes.GET_REQUEST_ALL_COINS_SUCCESS);
+export function getRequestAllCoinsSuccess(allCoins: any) {
+  return action(HomeTypes.GET_REQUEST_ALL_COINS_SUCCESS, { allCoins });
 }
 
 export function getRequestAllCoinsError(error: any) {
