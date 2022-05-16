@@ -41,13 +41,13 @@ export const LoginUpperArea = () => {
                       src={crypto.item.small}
                       alt="trending cryptos"
                     />
-                    <S.TrendingSymbol>
+                    <Text type={"input_label"}>
                       {`(  ${crypto.item.symbol} )`}
-                    </S.TrendingSymbol>
-                    <S.TrendingName>{`${crypto.item.slug}`}</S.TrendingName>
-                    <S.TrendingPrice>
+                    </Text>
+                    <Text type={"input_label"}>{`${crypto.item.slug}`}</Text>
+                    <Text type={"paragraph_text"}>
                       {` BTC ${crypto.item.price_btc.toFixed(17)}`}
-                    </S.TrendingPrice>
+                    </Text>
                   </S.TrendingCoinsContent>
                 );
               })
