@@ -34,20 +34,11 @@ const TrendingCoinsContent = styled.div`
 
 const TrendingCoins = styled.img``;
 
-const TrendingName = styled.p``;
-
-const TrendingSymbol = styled.p``;
-
-const TrendingPrice = styled.p``;
-
 const S = {
   TopContainer,
   TrendingCoinsContainer,
   TrendingCoinsContent,
   TrendingCoins,
-  TrendingPrice,
-  TrendingSymbol,
-  TrendingName,
 };
 
 export default S;

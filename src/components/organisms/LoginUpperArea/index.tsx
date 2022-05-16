@@ -1,51 +1,62 @@
 import S from "./styles";
 import Text from "../../atoms/Text";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { LoginTypes } from "../../../services/store/ducks/login/types";
-import { ApplicationState } from "../../../services/store/";
+import { ApplicationState } from "../../../services/store";
+import { Coins } from "../../../services/store/ducks/login/types";
+import { getRequestTrendingCoins } from "../../../services/store/ducks/login/actions";
+
 export const LoginUpperArea = () => {
+  const [trending, setTrending] = useState<any[]>([]);
+
   const dispatch = useDispatch();
 
+  const loginGlobalState = useSelector(
+    (state: ApplicationState) => state.login
+  );
+
   useEffect(() => {
-    dispatch({ type: LoginTypes.GET_REQUEST_ALL_COINS });
-  }, []);
+    dispatch(getRequestTrendingCoins());
+  }, [dispatch]);
 
-  const { allCoins } = useSelector((state: ApplicationState) => state.home);
+  useEffect(() => {
+    loginGlobalState.trendingCoins.coins &&
+      setTrending(loginGlobalState.trendingCoins.coins);
+  }, [loginGlobalState]);
 
-  console.log(allCoins);
   return (
     <>
-      <S.TopContainer>
-        <Text type={"input_label"}>{"2.0.0"}</Text>
-        <S.TrendingCoinsContainer>
-          {allCoins &&
-            allCoins.map((crypto: any) => (
-              <p key={crypto.id} style={{ color: "white" }}>
-                {crypto.name}
-              </p>
-              // <S.TrendingCoinsContent>
-              //   <S.TrendingCoins
-              //     src={crypto.item.small}
-              //     alt="trending cryptos"
-              //   />
-              //   <S.TrendingSymbol>
-              //     <Text
-              //       type={"paragraph_text"}
-              //     >{`(  ${crypto.item.symbol} )`}</Text>
-              //   </S.TrendingSymbol>
-              //   <S.TrendingName>
-              //     <Text type={"paragraph_text"}>{`${crypto.item.slug}`}</Text>
-              //   </S.TrendingName>
-              //   <S.TrendingPrice>
-              //     <Text type={"paragraph_text"}>
-              //       {` BTC ${crypto.item.price_btc.toFixed(17)}`}
-              //     </Text>
-              //   </S.TrendingPrice>
-              // </S.TrendingCoinsContent>
-            ))}
-        </S.TrendingCoinsContainer>
-      </S.TopContainer>
+      {loginGlobalState.loginLoad ? (
+        <h1>loading...</h1>
+      ) : (
+        <S.TopContainer>
+          <Text type={"input_label"}>{"2.0.0"}</Text>
+          <S.TrendingCoinsContainer>
+            {trending ? (
+              trending.map((crypto: Coins, index: number) => {
+                return (
+                  <S.TrendingCoinsContent key={index}>
+                    <S.TrendingCoins
+                      src={crypto.item.small}
+                      alt="trending cryptos"
+                    />
+                    <Text type={"input_label"}>
+                      {`(  ${crypto.item.symbol} )`}
+                    </Text>
+                    <Text type={"input_label"}>{`${crypto.item.slug}`}</Text>
+                    <Text type={"paragraph_text"}>
+                      {` BTC ${crypto.item.price_btc.toFixed(17)}`}
+                    </Text>
+                  </S.TrendingCoinsContent>
+                );
+              })
+            ) : (
+              <AiOutlineLoading3Quarters style={{ color: "white" }} />
+            )}
+          </S.TrendingCoinsContainer>
+        </S.TopContainer>
+      )}
     </>
   );
 };
