@@ -3,23 +3,35 @@ import produce from "immer";
 import { HomeTypes, HomeState } from "./types";
 
 const INITIAL_STATE: HomeState = {
-  allCoins: [],
   homeLoad: false,
+  allCoins: {
+    coins: [],
+  },
+  newCoins: [],
 };
 
 export function home(state = INITIAL_STATE, action: any = null) {
   return produce(state, (newState) => {
     switch (action.type) {
       case HomeTypes.GET_REQUEST_ALL_COINS:
-        newState.homeLoad = true;
-        break;
+        return {
+          ...newState,
+          homeLoad: true,
+        };
       case HomeTypes.GET_REQUEST_ALL_COINS_SUCCESS:
-        newState.homeLoad = true;
-        newState.allCoins = action.payload.allCoins;
-        break;
+        return {
+          ...newState,
+          homeLoad: false,
+          allCoins: { coins: action.payload },
+          newCoins: action.payload,
+        };
       case HomeTypes.GET_REQUEST_ALL_COINS_ERROR:
-        newState.homeLoad = true;
-        break;
+        return {
+          ...newState,
+          homeLoad: false,
+        };
+      default:
+        return newState;
     }
   });
 }
