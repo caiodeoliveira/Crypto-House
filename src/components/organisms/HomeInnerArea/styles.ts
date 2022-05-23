@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: row;
   height: 100vh;
   width: 100vw;
-  align-items: center;
+  align-items: flex-start;
   background: black;
 `;
 
@@ -16,8 +16,12 @@ export const CoinsContainer = styled.div`
 `;
 
 export const CoinsContainerHeader = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 `;
 
 export const CoinsMarketCapPosition = styled.div``;
