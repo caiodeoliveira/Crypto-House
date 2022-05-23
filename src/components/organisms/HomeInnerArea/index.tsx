@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { ApplicationState } from "../../../services/store/index";
 import { Coins, HomeTypes } from "../../../services/store/ducks/home/types";
 import Text from "../../atoms/Text";
+import { Spin } from "../../atoms/Spin";
 
 export const HomeInnerArea = () => {
   const [coins, setCoins] = useState<Coins[]>([]);
 
-  const homeState = useSelector((state: ApplicationState) => state.home);
+  const { homeLoad, newCoins } = useSelector(
+    (state: ApplicationState) => state.home
+  );
 
   const dispatch = useDispatch();
 
@@ -17,44 +20,43 @@ export const HomeInnerArea = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    homeState.newCoins && setCoins(homeState.newCoins);
-  }, [homeState]);
+    newCoins && setCoins(newCoins);
+    dataLoading();
+  }, [newCoins]);
 
-  if (homeState.homeLoad) {
-    return <h1>Loading...</h1>;
-  }
-
+  const dataLoading = () => {
+    if (homeLoad) {
+      return <Spin size={70} />;
+    } else {
+      return coins.map((crypto: Coins, index: number) => {
+        return (
+          <S.CoinsListRows key={index}>
+            <S.CoinsMarketCapPosition>
+              <Text type={"title"}>{crypto.market_cap_rank}</Text>
+              <S.CoinsImage src={crypto.image} />
+              <Text type={"title"}>{crypto.name}</Text>
+              <Text type={"title"}>{crypto.symbol}</Text>
+              <Text type={"title"}>{crypto.current_price}</Text>
+            </S.CoinsMarketCapPosition>
+          </S.CoinsListRows>
+        );
+      });
+    }
+  };
   return (
     <S.Container>
       <S.CoinsContainerHeader>
-        <S.CoinsMarketCapPosition>
-          <Text type={"title"}>#</Text>
-        </S.CoinsMarketCapPosition>
-        <S.CoinImageAndName>
-          <Text type={"title"}>Coin</Text>
-        </S.CoinImageAndName>
-        <S.CoinsSymbol>
-          <Text type={"title"}>Symbol</Text>
-        </S.CoinsSymbol>
-        <S.CoinsPrice>
-          <Text type={"title"}>Price</Text>
-        </S.CoinsPrice>
-        <S.CoinsPriceChangeDay>
-          <Text type={"title"}>24h %</Text>
-        </S.CoinsPriceChangeDay>
-        <S.CoinsPriceChangeWeek>
-          <Text type={"title"}>7d %</Text>
-        </S.CoinsPriceChangeWeek>
-        <S.CoinsMarketCapValue>
-          <Text type={"title"}>MarketCap</Text>
-        </S.CoinsMarketCapValue>
-        <S.CoinsVolumeDay>
-          <Text type={"title"}>Volume(24h)</Text>
-        </S.CoinsVolumeDay>
-        <S.CoinsCirculatingSupply>
-          <Text type={"title"}>Circulating Supply</Text>
-        </S.CoinsCirculatingSupply>
+        <Text type={"title"}>#</Text>
+        <Text type={"title"}>Coin</Text>
+        <Text type={"title"}>Symbol</Text>
+        <Text type={"title"}>Price</Text>
+        <Text type={"title"}>24h %</Text>
+        <Text type={"title"}>7d %</Text>
+        <Text type={"title"}>Market Cap</Text>
+        <Text type={"title"}>Volume(24h)</Text>
+        <Text type={"title"}>Circulating Supply</Text>
       </S.CoinsContainerHeader>
+      <S.CoinsListContainer>{dataLoading()}</S.CoinsListContainer>
     </S.Container>
   );
 };

@@ -4,7 +4,7 @@ import api from "../../../api/index";
 import { getErrorMessage } from "../../../hooks/getErrorMessage";
 
 export function* getRequestAllCoins() {
-  const url = `/coins/markets?vs_currency=usd`;
+  const url = `/coins/markets?vs_currency=usd&price_change_percentage=7d&per_page=5`;
 
   try {
     const { data } = yield call(api.get, url);
