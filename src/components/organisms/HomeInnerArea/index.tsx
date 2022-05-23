@@ -26,11 +26,7 @@ export const HomeInnerArea = () => {
   return (
     <S.Container>
       {coins.map((crypto: Coins, index: number) => {
-        return (
-          <S.CoinsContainer key={index}>
-            <img src={`${crypto.image}`} alt="crypto" />
-          </S.CoinsContainer>
-        );
+        return <S.CoinsContainer key={index}></S.CoinsContainer>;
       })}
     </S.Container>
   );

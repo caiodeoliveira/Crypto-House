@@ -19,3 +19,13 @@ export const CoinsContainerHeader = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const CoinsMarketCapPosition = styled.div``;
+export const CoinImageAndName = styled.div``;
+export const CoinsSymbol = styled.div``;
+export const CoinsPrice = styled.div``;
+export const CoinsPriceChangeDay = styled.div``;
+export const CoinsPriceChangeWeek = styled.div``;
+export const CoinsMarketCapValue = styled.div``;
+export const CoinsVolumeDay = styled.div``;
+export const CoinsCirculatingSupply = styled.div``;
