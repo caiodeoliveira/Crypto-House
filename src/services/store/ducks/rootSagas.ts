@@ -1,10 +1,10 @@
 import * as Effect from "redux-saga/effects";
 
-import { HomeTypes } from "./home/types";
 import { LoginTypes } from "./login/types";
+import { HomeTypes } from "./home/types";
 
-import { getRequestAllCoins } from "./home/sagas";
 import { getRequestTrendingCoins } from "./login/sagas";
+import { getRequestAllCoins } from "./home/sagas";
 
 export default function* rootSaga(): any {
   const takeLatest: any = Effect.takeLatest;

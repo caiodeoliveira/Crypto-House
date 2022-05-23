@@ -1,13 +1,12 @@
-import React from "react";
 import S from "./styles";
-import Text from "../../atoms/Text";
+import { HomeUpperArea } from "../../organisms/HomeUpperArea";
+import { HomeInnerArea } from "../../organisms/HomeInnerArea";
 
-const Home = () => {
+export const Home = () => {
   return (
     <S.Container>
-      <Text type={"title"}>{"Seja bem vindo"}</Text>
+      <HomeUpperArea />
+      <HomeInnerArea />
     </S.Container>
   );
 };
-
-export default Home;

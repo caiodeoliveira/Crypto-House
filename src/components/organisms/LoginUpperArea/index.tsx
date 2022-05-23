@@ -28,7 +28,10 @@ export const LoginUpperArea = () => {
   return (
     <>
       {loginGlobalState.loginLoad ? (
-        <h1>loading...</h1>
+        <>
+          <h1>Loading... </h1>
+          <AiOutlineLoading3Quarters size={40} />
+        </>
       ) : (
         <S.TopContainer>
           <Text type={"input_label"}>{"2.0.0"}</Text>
