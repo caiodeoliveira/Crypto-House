@@ -30,15 +30,30 @@ export const HomeInnerArea = () => {
     } else {
       return coins.map((crypto: Coins, index: number) => {
         return (
-          <S.CoinsListRows key={index}>
-            <S.CoinsMarketCapPosition>
+          <S.CoinsListContainer key={index}>
+            <S.CoinsRowContent>
               <Text type={"title"}>{crypto.market_cap_rank}</Text>
-              <S.CoinsImage src={crypto.image} />
-              <Text type={"title"}>{crypto.name}</Text>
-              <Text type={"title"}>{crypto.symbol}</Text>
-              <Text type={"title"}>{crypto.current_price}</Text>
-            </S.CoinsMarketCapPosition>
-          </S.CoinsListRows>
+              <S.CoinNameAndImageContainer>
+                <S.CoinsImage src={crypto.image} />
+                <Text type={"title"}>{crypto.name}</Text>
+              </S.CoinNameAndImageContainer>
+              <Text type={"title"}>({crypto.symbol?.toUpperCase()})</Text>
+              <Text type={"title"}>
+                ${crypto.current_price?.toLocaleString("en-US")}
+              </Text>
+              <Text type={"title"}>
+                {crypto.price_change_percentage_24h?.toFixed(2)}%
+              </Text>
+              <Text type={"title"}>
+                {crypto.price_change_percentage_7d_in_currency?.toFixed(2)}%
+              </Text>
+              <Text type={"title"}>{crypto.market_cap?.toFixed(2)}%</Text>
+              <Text type={"title"}>{crypto.total_volume?.toFixed(2)}%</Text>
+              <Text type={"title"}>
+                {crypto.circulating_supply?.toFixed(2)}%
+              </Text>
+            </S.CoinsRowContent>
+          </S.CoinsListContainer>
         );
       });
     }
@@ -56,7 +71,7 @@ export const HomeInnerArea = () => {
         <Text type={"title"}>Volume(24h)</Text>
         <Text type={"title"}>Circulating Supply</Text>
       </S.CoinsContainerHeader>
-      <S.CoinsListContainer>{dataLoading()}</S.CoinsListContainer>
+      {dataLoading()}
     </S.Container>
   );
 };

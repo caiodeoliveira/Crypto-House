@@ -8,37 +8,41 @@ export const Container = styled.div`
   background: black;
 `;
 
-export const CoinsContainerHeader = styled.section`
+export const CoinsContainerHeader = styled.header`
   width: 100%;
   height: 100%;
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-`;
-export const CoinsListContainer = styled.section`
-  display: column;
   justify-content: space-around;
   position: sticky;
   top: 0;
-  z-index: 1;
+  background-color: blue;
 `;
 
-export const CoinsListRows = styled.div`
+export const CoinsListContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  background-color: black;
 `;
 
-export const CoinsMarketCapPosition = styled.div``;
-export const CoinsImage = styled.img`
-  width: 20%;
+export const CoinsRowContent = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
-export const CoinImageAndName = styled.div``;
-export const CoinsSymbol = styled.div``;
-export const CoinsPrice = styled.div``;
-export const CoinsPriceChangeDay = styled.div``;
-export const CoinsPriceChangeWeek = styled.div``;
-export const CoinsMarketCapValue = styled.div``;
-export const CoinsVolumeDay = styled.div``;
-export const CoinsCirculatingSupply = styled.div``;
+
+export const CoinNameAndImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const CoinsImage = styled.img`
+  max-width: 80px;
+  max-height: 80px;
+`;
