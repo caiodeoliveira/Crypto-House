@@ -33,7 +33,7 @@ export const HomeInnerArea = () => {
           <S.CoinsListContainer key={index}>
             <S.CoinsRowContent>
               <Text type={"title"}>{crypto.market_cap_rank}</Text>
-              <S.CoinNameAndImageContainer>
+              <S.CoinNameAndImageContainer space={"coin"}>
                 <S.CoinsImage src={crypto.image} />
                 <Text type={"title"}>{crypto.name}</Text>
               </S.CoinNameAndImageContainer>
