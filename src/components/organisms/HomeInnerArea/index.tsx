@@ -47,12 +47,28 @@ export const HomeInnerArea = () => {
                 </Text>
               </S.body.CoinPriceContainer>
               <S.body.CoinPercentageDayContainer space={"price_change_day"}>
-                <Text type={"title"}>
+                <Text
+                  type={"title"}
+                  color={
+                    crypto.price_change_percentage_24h == null ||
+                    crypto.price_change_percentage_24h >= 0
+                      ? "#169916"
+                      : "#E84C4C"
+                  }
+                >
                   {crypto.price_change_percentage_24h?.toFixed(2)}%
                 </Text>
               </S.body.CoinPercentageDayContainer>
               <S.body.CoinPercentageWeekContainer space={"price_change_week"}>
-                <Text type={"title"}>
+                <Text
+                  type={"title"}
+                  color={
+                    crypto.price_change_percentage_24h == null ||
+                    crypto.price_change_percentage_24h >= 0
+                      ? "#169916"
+                      : "#E84C4C"
+                  }
+                >
                   {crypto.price_change_percentage_7d_in_currency?.toFixed(2)}%
                 </Text>
               </S.body.CoinPercentageWeekContainer>
