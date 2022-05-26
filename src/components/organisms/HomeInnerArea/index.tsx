@@ -21,10 +21,10 @@ export const HomeInnerArea = () => {
 
   useEffect(() => {
     newCoins && setCoins(newCoins);
-    dataLoading();
+    renderInnerArea();
   }, [newCoins]);
 
-  const dataLoading = () => {
+  const renderInnerArea = () => {
     if (homeLoad) {
       return <Spin size={70} />;
     } else {
@@ -32,26 +32,40 @@ export const HomeInnerArea = () => {
         return (
           <S.CoinsListContainer key={index}>
             <S.CoinsRowContent>
-              <Text type={"title"}>{crypto.market_cap_rank}</Text>
+              <S.MarketCapRankContainer space={"rank"}>
+                <Text type={"title"}>{crypto.market_cap_rank}</Text>
+              </S.MarketCapRankContainer>
               <S.CoinNameAndImageContainer space={"coin"}>
                 <S.CoinsImage src={crypto.image} />
                 <Text type={"title"}>{crypto.name}</Text>
+                <Text type={"title"}>({crypto.symbol?.toUpperCase()})</Text>
               </S.CoinNameAndImageContainer>
-              <Text type={"title"}>({crypto.symbol?.toUpperCase()})</Text>
-              <Text type={"title"}>
-                ${crypto.current_price?.toLocaleString("en-US")}
-              </Text>
-              <Text type={"title"}>
-                {crypto.price_change_percentage_24h?.toFixed(2)}%
-              </Text>
-              <Text type={"title"}>
-                {crypto.price_change_percentage_7d_in_currency?.toFixed(2)}%
-              </Text>
-              <Text type={"title"}>{crypto.market_cap?.toFixed(2)}%</Text>
-              <Text type={"title"}>{crypto.total_volume?.toFixed(2)}%</Text>
-              <Text type={"title"}>
-                {crypto.circulating_supply?.toFixed(2)}%
-              </Text>
+              <S.CoinPriceContainer space={"price"}>
+                <Text type={"title"}>
+                  ${crypto.current_price?.toLocaleString("en-US")}
+                </Text>
+              </S.CoinPriceContainer>
+              <S.CoinPercentageDayContainer space={"price_change_day"}>
+                <Text type={"title"}>
+                  {crypto.price_change_percentage_24h?.toFixed(2)}%
+                </Text>
+              </S.CoinPercentageDayContainer>
+              <S.CoinPercentageWeekContainer space={"price_change_week"}>
+                <Text type={"title"}>
+                  {crypto.price_change_percentage_7d_in_currency?.toFixed(2)}%
+                </Text>
+              </S.CoinPercentageWeekContainer>
+              <S.CoinMarketCapValueContainer space={"market_cap_value"}>
+                <Text type={"title"}>{crypto.market_cap?.toFixed(2)}</Text>
+              </S.CoinMarketCapValueContainer>
+              <S.CoinVolumeContainer space={"volume"}>
+                <Text type={"title"}>{crypto.total_volume?.toFixed(2)}%</Text>
+              </S.CoinVolumeContainer>
+              <S.CoinCirculatingSupplyContainer space={"circulating_supply"}>
+                <Text type={"title"}>
+                  {crypto.circulating_supply?.toFixed(2)}%
+                </Text>
+              </S.CoinCirculatingSupplyContainer>
             </S.CoinsRowContent>
           </S.CoinsListContainer>
         );
@@ -71,7 +85,7 @@ export const HomeInnerArea = () => {
         <Text type={"title"}>Volume(24h)</Text>
         <Text type={"title"}>Circulating Supply</Text>
       </S.CoinsContainerHeader>
-      {dataLoading()}
+      {renderInnerArea()}
     </S.Container>
   );
 };
