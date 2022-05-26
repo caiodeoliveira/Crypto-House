@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { HomeInnerAreaProps } from "./types";
+import { colors } from "../../../styles/mixins";
 
 export const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
   background: black;
 `;
 
@@ -14,13 +15,71 @@ export const CoinsContainerHeader = styled.header`
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   position: sticky;
   top: 0;
-  background-color: blue;
+  background-color: ${colors.primary};
   margin-bottom: 20px;
+  padding: 5px 0;
+`;
+/* Header Container Components */
+export const CoinMarketCapRankHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: left;
 `;
 
+export const CoinNameImageAndSymbolHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 120px;
+`;
+
+export const CoinPriceHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinPercentageDayHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinPercentageWeekHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinMarketCapValueHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)} + 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinVolumeHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: right;
+`;
+
+export const CoinCirculatingSupplyHeaderContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  display: flex;
+  align-items: center;
+  justify-content: right;
+`;
+/* Body Container Components */
 export const CoinsListContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -35,14 +94,25 @@ export const CoinsRowContent = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-bottom: 30px;
 `;
 
-export const CoinNameAndImageContainer = styled.div<HomeInnerAreaProps>`
+export const CoinMarketCapRankContainer = styled.div<HomeInnerAreaProps>`
   height: 100%;
-  width: ${(props) => handleSpaceContainer(props.space)};
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
   display: flex;
   align-items: center;
+  justify-content: left;
+`;
+
+export const CoinNameImageAndSymbolContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
 `;
 
 export const CoinsImage = styled.img`
@@ -50,27 +120,104 @@ export const CoinsImage = styled.img`
   max-height: 60px;
 `;
 
-const handleSpaceContainer = (space: string) => {
+export const CoinPriceContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinPercentageDayContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinPercentageWeekContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinMarketCapValueContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CoinVolumeContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+`;
+
+export const CoinCirculatingSupplyContainer = styled.div<HomeInnerAreaProps>`
+  width: ${(props) => handleSpaceInnerAreaContainer(props.space)};
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+`;
+
+const handleSpaceInnerAreaContainer = (space: string) => {
   switch (space) {
     case "market_cap_rank":
       return "2%";
     case "coin":
-      return "15%";
-    case "symbol":
-      return "3%";
+      return "17%";
     case "price":
       return "10%";
     case "price_change_day":
-      return "5%";
+      return "8%";
     case "price_change_week":
-      return "5%";
+      return "16%";
     case "market_cap":
-      return "5%";
+      return "15%";
     case "volume":
-      return "5%";
+      return "17%";
     case "circulating_supply":
-      return "5%";
+      return "15%";
     default:
       return "5%";
   }
+};
+
+export const S = {
+  general: {
+    Container,
+    CoinsListContainer,
+    CoinsContainerHeader,
+  },
+
+  Header: {
+    CoinMarketCapRankHeaderContainer,
+    CoinNameImageAndSymbolHeaderContainer,
+    CoinPriceHeaderContainer,
+    CoinPercentageDayHeaderContainer,
+    CoinPercentageWeekHeaderContainer,
+    CoinMarketCapValueHeaderContainer,
+    CoinVolumeHeaderContainer,
+    CoinCirculatingSupplyContainer,
+  },
+  body: {
+    CoinsRowContent,
+    CoinMarketCapRankContainer,
+    CoinNameImageAndSymbolContainer,
+    CoinPriceContainer,
+    CoinsImage,
+    CoinPercentageDayContainer,
+    CoinPercentageWeekContainer,
+    CoinMarketCapValueContainer,
+    CoinVolumeContainer,
+    CoinCirculatingSupplyContainer,
+  },
 };
