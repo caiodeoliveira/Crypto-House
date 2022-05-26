@@ -5,6 +5,7 @@ import { ApplicationState } from "../../../services/store/index";
 import { Coins, HomeTypes } from "../../../services/store/ducks/home/types";
 import Text from "../../atoms/Text";
 import { Spin } from "../../atoms/Spin";
+import { colors } from "../../../styles/mixins";
 
 export const HomeInnerArea = () => {
   const [coins, setCoins] = useState<Coins[]>([]);
@@ -52,8 +53,8 @@ export const HomeInnerArea = () => {
                   color={
                     crypto.price_change_percentage_24h == null ||
                     crypto.price_change_percentage_24h >= 0
-                      ? "#169916"
-                      : "#E84C4C"
+                      ? `${colors.primary}`
+                      : `${colors.cancel}`
                   }
                 >
                   {crypto.price_change_percentage_24h?.toFixed(2)}%
@@ -65,8 +66,8 @@ export const HomeInnerArea = () => {
                   color={
                     crypto.price_change_percentage_24h == null ||
                     crypto.price_change_percentage_24h >= 0
-                      ? "#169916"
-                      : "#E84C4C"
+                      ? `${colors.primary}`
+                      : `${colors.cancel}`
                   }
                 >
                   {crypto.price_change_percentage_7d_in_currency?.toFixed(2)}%

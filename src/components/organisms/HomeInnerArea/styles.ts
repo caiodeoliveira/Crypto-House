@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HomeInnerAreaProps } from "./types";
+import { colors } from "../../../styles/mixins";
 
 export const Container = styled.div`
   width: 100vw;
@@ -17,8 +18,9 @@ export const CoinsContainerHeader = styled.header`
   justify-content: center;
   position: sticky;
   top: 0;
-  background-color: blue;
+  background-color: ${colors.primary};
   margin-bottom: 20px;
+  padding: 5px 0;
 `;
 /* Header Container Components */
 export const CoinMarketCapRankHeaderContainer = styled.div<HomeInnerAreaProps>`
