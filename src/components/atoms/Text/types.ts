@@ -5,7 +5,8 @@ type TextTypes =
   | "keep_connect_label"
   | "login_problem_label"
   | "footer"
-  | "paragraph_text";
+  | "paragraph_text"
+  | "welcome_text";
 
 export default interface TextProps {
   type: TextTypes;

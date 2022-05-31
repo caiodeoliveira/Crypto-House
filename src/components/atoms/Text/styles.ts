@@ -26,7 +26,7 @@ const InputLabelText = styled.div`
 const FooterText = styled.div`
   font-size: ${typography.modal_subtitle};
   font-weight: ${fonts.montserrat.normal};
-  color: ${colors.body};
+  color: ${colors.dark};
 `;
 
 const KeepConnectLabel = styled.div`
@@ -46,6 +46,14 @@ const CoinPriceLabel = styled.p`
   color: ${colors.body};
 `;
 
+const WelcomeText = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: ${typography.modal_title};
+  font-weight: ${fonts.montserrat.normal};
+  color: ${colors.dark};
+`;
+
 const S = {
   TitleText,
   SubTitleText,
@@ -54,6 +62,7 @@ const S = {
   LoginProblemLabel,
   FooterText,
   CoinPriceLabel,
+  WelcomeText,
 };
 
 export default S;
