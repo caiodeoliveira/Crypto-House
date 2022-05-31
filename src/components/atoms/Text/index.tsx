@@ -18,6 +18,8 @@ const Text = ({ type, children, color }: TextProps) => {
         return <S.FooterText>{children}</S.FooterText>;
       case "paragraph_text":
         return <S.CoinPriceLabel>{children}</S.CoinPriceLabel>;
+      case "welcome_text":
+        return <S.WelcomeText>{children}</S.WelcomeText>;
     }
   };
   return selectType();
