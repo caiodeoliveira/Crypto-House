@@ -1,13 +1,24 @@
-import { Drawer, List, withStyles } from "@material-ui/core";
+import { Drawer, List, ListItem, withStyles } from "@material-ui/core";
 
 export const DrawerComponent = withStyles({
-  root: {},
+  root: {
+    display: "flex",
+    flexDirection: "column",
+  },
 })(Drawer);
 
 export const DrawerList = withStyles({
   root: {
     display: "flex",
-    width: "100%",
-    height: "50%",
+    flexDirection: "column",
   },
 })(List);
+
+export const ItemList = withStyles({
+  root: {
+    display: "flex",
+    flexDirection: "row",
+    marginRight: "25px",
+    height: "100%",
+  },
+})(ListItem);

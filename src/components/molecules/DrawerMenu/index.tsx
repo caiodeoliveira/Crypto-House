@@ -1,23 +1,48 @@
 import * as S from "./styles";
+import Text from "../../atoms/Text";
 import { DrawerMenuProps } from "./types";
-import { Divider, ListItem, ListItemIcon } from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import { Divider } from "@material-ui/core";
+// import HomeIcon from "@material-ui/icons/Home";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
 
 export const DrawerMenu = ({ open, anchor, elevation }: DrawerMenuProps) => {
   return (
     <S.DrawerComponent open={open} anchor={anchor} elevation={elevation}>
       <S.DrawerList>
-        <h1>A</h1>
-        <h1>B</h1>
-        <h1>C</h1>
-        <h1>D</h1>
-        <h1>E</h1>
-        <h1>F</h1>
-        <h1>G</h1>
-        <h1>H</h1>
-        <h1>I</h1>
-        <h1>J</h1>
+        <S.ItemList button={true}>
+          <FavoriteIcon />
+          <Text type={"footer"} margin={"0 0 0 20px"}>
+            Favorites
+          </Text>
+        </S.ItemList>
+
+        <S.ItemList button={true}>
+          <AccountBalanceWalletIcon />
+          <Text type={"footer"} margin={"0 0 0 20px"}>
+            Wallet
+          </Text>
+        </S.ItemList>
+
+        <Divider />
+      </S.DrawerList>
+
+      <S.DrawerList>
+        <S.ItemList button={true}>
+          <AccountCircleIcon />
+          <Text type={"footer"} margin={"0 0 0 20px"}>
+            Account
+          </Text>
+        </S.ItemList>
+
+        <S.ItemList button={true}>
+          <ExitToAppIcon />
+          <Text type={"footer"} margin={"0 0 0 20px"}>
+            Exit
+          </Text>
+        </S.ItemList>
       </S.DrawerList>
     </S.DrawerComponent>
   );
