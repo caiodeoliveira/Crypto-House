@@ -7,8 +7,15 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+import { useHistory } from "react-router-dom";
 
 export const DrawerMenu = ({ open, anchor, elevation }: DrawerMenuProps) => {
+  const history = useHistory();
+
+  const logOff = () => {
+    history.push("/");
+  };
+
   return (
     <S.DrawerComponent open={open} anchor={anchor} elevation={elevation}>
       <S.DrawerList>
@@ -37,7 +44,12 @@ export const DrawerMenu = ({ open, anchor, elevation }: DrawerMenuProps) => {
           </Text>
         </S.ItemList>
 
-        <S.ItemList button={true}>
+        <S.ItemList
+          button={true}
+          onClick={() => {
+            logOff();
+          }}
+        >
           <ExitToAppIcon />
           <Text type={"footer"} margin={"0 0 0 20px"}>
             Exit
