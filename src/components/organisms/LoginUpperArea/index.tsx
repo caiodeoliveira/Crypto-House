@@ -6,11 +6,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { ApplicationState } from "../../../services/store";
 import { Coins } from "../../../services/store/ducks/login/types";
 import { getRequestTrendingCoins } from "../../../services/store/ducks/login/actions";
+import HomeIcon from "@material-ui/icons/Home";
+import { useHistory } from "react-router";
 
 export const LoginUpperArea = () => {
   const [trending, setTrending] = useState<any[]>([]);
 
   const dispatch = useDispatch();
+
+  const history = useHistory();
+
+  const goHome = () => {
+    history.push("/home");
+  };
 
   const loginGlobalState = useSelector(
     (state: ApplicationState) => state.login
@@ -58,6 +66,13 @@ export const LoginUpperArea = () => {
               <AiOutlineLoading3Quarters style={{ color: "white" }} />
             )}
           </S.TrendingCoinsContainer>
+          <button
+            onClick={() => {
+              goHome();
+            }}
+          >
+            <HomeIcon />
+          </button>
         </S.TopContainer>
       )}
     </>
