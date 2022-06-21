@@ -10,13 +10,14 @@ const Button = ({ type, onClick, disabled, children }: ButtonProps) => {
             <S.RecoverButton onClick={onClick} disabled={disabled}>
               {children}
             </S.RecoverButton>
-            ;
           </>
         );
       case "submit":
         return (
           <>
-            <S.LoginButton onClick={onClick}>{children}</S.LoginButton>;
+            <S.LoginButton onClick={onClick} variant={"contained"}>
+              {children}
+            </S.LoginButton>
           </>
         );
     }

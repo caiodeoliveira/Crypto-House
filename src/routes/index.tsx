@@ -1,14 +1,13 @@
-import { Route, BrowserRouter } from "react-router-dom";
+// import { useEffect } from "react";
+import { Route, BrowserRouter, Redirect } from "react-router-dom";
 import { Login } from "../components/templates/login";
-
-import React from "react";
 import { Home } from "../components/templates/home";
 
-const Routes: React.FC = () => {
+const Routes = () => {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={Login} />
-      <Route path="/home" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route path="/login" component={Login} />
     </BrowserRouter>
   );
 };

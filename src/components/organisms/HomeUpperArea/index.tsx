@@ -5,10 +5,10 @@ import { CgMenuRound } from "react-icons/cg";
 import Text from "../../atoms/Text";
 
 export const HomeUpperArea = () => {
-  const [openDrawer, setOpenDrawer] = React.useState<boolean>(false);
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
 
   const toggleDrawer = () => {
-    setOpenDrawer(!openDrawer);
+    setIsDrawerOpen(!isDrawerOpen);
   };
 
   return (
@@ -27,9 +27,14 @@ export const HomeUpperArea = () => {
           <h6>E</h6>
         </Text>
         <S.VersionContainer>
-          <Text type={"welcome_text"}>V.1.2.5</Text>
+          <Text type={"welcome_text"}>V 2.0.0</Text>
         </S.VersionContainer>
-        <DrawerMenu open={true} anchor={"left"} elevation={200} />
+        <DrawerMenu
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+          anchor={"left"}
+          elevation={200}
+        />
       </S.Container>
     </>
   );

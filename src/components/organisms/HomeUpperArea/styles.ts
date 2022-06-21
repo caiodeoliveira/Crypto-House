@@ -18,7 +18,7 @@ export const DrawerMenuButtonContainer = styled.button`
 export const VersionContainer = styled.div`
   color: black;
   position: absolute;
-  right: 10px;
+  right: 15px;
 `;
 
 export const WelcomeTextContainer = styled.div`

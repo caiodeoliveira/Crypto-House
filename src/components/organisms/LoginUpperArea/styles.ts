@@ -18,8 +18,10 @@ const TrendingCoinsContainer = styled.div`
   border-radius: 5px;
   display: flex;
   width: 80%;
-  height: 80%;
+  margin-top: 15px;
   margin-right: 40px;
+  margin-bottom: 15px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;

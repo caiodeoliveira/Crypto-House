@@ -22,13 +22,11 @@ const RecoverButton = withStyles({
 const LoginButton = withStyles({
   root: {
     borderRadius: 3,
-    border: `2px ${colors.primary} solid`,
     color: "white",
     backgroundColor: `${colors.dark}`,
     width: "210px",
     height: "40px",
     padding: "20px 0 15px 0",
-    marginTop: "15px",
   },
 })(Button);
 
