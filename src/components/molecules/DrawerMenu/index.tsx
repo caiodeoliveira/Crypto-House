@@ -2,22 +2,26 @@ import * as S from "./styles";
 import Text from "../../atoms/Text";
 import { DrawerMenuProps } from "./types";
 import { Divider } from "@material-ui/core";
-// import HomeIcon from "@material-ui/icons/Home";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
-import { useHistory } from "react-router-dom";
+import { signOut, getAuth } from "firebase/auth";
 
-export const DrawerMenu = ({ open, anchor, elevation }: DrawerMenuProps) => {
-  const history = useHistory();
-
-  const logOff = () => {
-    history.push("/");
-  };
+export const DrawerMenu = ({
+  open,
+  onClose,
+  anchor,
+  elevation,
+}: DrawerMenuProps) => {
+  const auth = getAuth();
 
   return (
-    <S.DrawerComponent open={open} anchor={anchor} elevation={elevation}>
+    <S.DrawerComponent
+      open={open}
+      anchor={anchor}
+      elevation={elevation}
+      onClose={onClose}
+    >
       <S.DrawerList>
         <S.ItemList button={true}>
           <FavoriteIcon />
@@ -43,19 +47,10 @@ export const DrawerMenu = ({ open, anchor, elevation }: DrawerMenuProps) => {
             Account
           </Text>
         </S.ItemList>
-
-        <S.ItemList
-          button={true}
-          onClick={() => {
-            logOff();
-          }}
-        >
-          <ExitToAppIcon />
-          <Text type={"footer"} margin={"0 0 0 20px"}>
-            Exit
-          </Text>
-        </S.ItemList>
       </S.DrawerList>
+      <S.VersionContainer>
+        <Text type={"welcome_text"}>V 2.0.0</Text>
+      </S.VersionContainer>
     </S.DrawerComponent>
   );
 };

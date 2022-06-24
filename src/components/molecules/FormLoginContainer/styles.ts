@@ -31,9 +31,6 @@ const FormConnectBox = styled.div`
 
 const LoginLabel = withStyles({
   root: {
-    label: {
-      color: "blue",
-    },
     "& > *": {
       fontSize: `${typography.subTitle}`,
     },

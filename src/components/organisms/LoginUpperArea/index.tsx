@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { ApplicationState } from "../../../services/store";
 import { Coins } from "../../../services/store/ducks/login/types";
 import { getRequestTrendingCoins } from "../../../services/store/ducks/login/actions";
-import HomeIcon from "@material-ui/icons/Home";
 import { useHistory } from "react-router";
 
 export const LoginUpperArea = () => {
@@ -57,7 +56,7 @@ export const LoginUpperArea = () => {
                     </Text>
                     <Text type={"input_label"}>{`${crypto.item.slug}`}</Text>
                     <Text type={"paragraph_text"}>
-                      {` BTC ${crypto.item.price_btc.toFixed(17)}`}
+                      {` BTC ${crypto.item.price_btc.toFixed(10)}`}
                     </Text>
                   </S.TrendingCoinsContent>
                 );
@@ -66,13 +65,6 @@ export const LoginUpperArea = () => {
               <AiOutlineLoading3Quarters style={{ color: "white" }} />
             )}
           </S.TrendingCoinsContainer>
-          <button
-            onClick={() => {
-              goHome();
-            }}
-          >
-            <HomeIcon />
-          </button>
         </S.TopContainer>
       )}
     </>

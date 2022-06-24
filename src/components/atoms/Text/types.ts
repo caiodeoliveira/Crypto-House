@@ -6,7 +6,8 @@ type TextTypes =
   | "login_problem_label"
   | "footer"
   | "paragraph_text"
-  | "welcome_text";
+  | "welcome_text"
+  | "log_out_text";
 
 export default interface TextProps {
   type: TextTypes;
