@@ -22,6 +22,8 @@ const Text = ({ type, children, color, margin }: TextProps) => {
         return <S.CoinPriceLabel>{children}</S.CoinPriceLabel>;
       case "welcome_text":
         return <S.WelcomeText>{children}</S.WelcomeText>;
+      case "log_out_text":
+        return <S.LogOutText>{children}</S.LogOutText>;
     }
   };
   return selectType();

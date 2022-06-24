@@ -2,6 +2,9 @@ export const enum HomeTypes {
   GET_REQUEST_ALL_COINS = "GET_REQUEST_ALL_COINS",
   GET_REQUEST_ALL_COINS_SUCCESS = "GET_REQUEST_ALL_COINS_SUCCESS",
   GET_REQUEST_ALL_COINS_ERROR = "GET_REQUEST_ALL_COINS_ERROR",
+
+  CHANGE_TO_ON_SIGN_IN_USER_STATUS = "CHANGE_USER_STATUS",
+  CHANGE_TO_OFF_SIGN_OF_USER_STATUS = "ACTIVE_SIGN_IN_USER_STATUS",
 }
 
 export interface HomeState {
@@ -10,6 +13,7 @@ export interface HomeState {
     coins?: Coins[];
   };
   newCoins?: Coins[];
+  isUserLogged: boolean;
 }
 
 export interface Coins {

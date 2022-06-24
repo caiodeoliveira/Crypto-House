@@ -8,6 +8,7 @@ const INITIAL_STATE: HomeState = {
     coins: [],
   },
   newCoins: [],
+  isUserLogged: false,
 };
 
 export function home(state = INITIAL_STATE, action: any = null) {
@@ -29,6 +30,18 @@ export function home(state = INITIAL_STATE, action: any = null) {
         return {
           ...newState,
           homeLoad: false,
+        };
+      case HomeTypes.CHANGE_TO_ON_SIGN_IN_USER_STATUS:
+        return {
+          ...newState,
+          homeLoad: false,
+          isUserLogged: true,
+        };
+      case HomeTypes.CHANGE_TO_OFF_SIGN_OF_USER_STATUS:
+        return {
+          ...newState,
+          homeLoad: false,
+          isUserLogged: false,
         };
       default:
         return newState;

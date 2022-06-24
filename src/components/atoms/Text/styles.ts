@@ -17,24 +17,24 @@ const SubTitleText = styled.div`
     font-size: 25px;
   }
 `;
-const InputLabelText = styled.div`
+const InputLabelText = styled.p`
   font-size: ${typography.modal_subtitle};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};
 `;
 
-const FooterText = styled.div`
+const FooterText = styled.p`
   font-size: ${typography.modal_subtitle};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.dark};
 `;
 
-const KeepConnectLabel = styled.div`
+const KeepConnectLabel = styled.p`
   font-size: ${typography.modal_subtitle};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};
 `;
-const LoginProblemLabel = styled.div`
+const LoginProblemLabel = styled.p`
   font-size: ${typography.modal_subtitle};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};
@@ -46,11 +46,19 @@ const CoinPriceLabel = styled.p`
   color: ${colors.body};
 `;
 
-const WelcomeText = styled.div`
+const WelcomeText = styled.h1`
   display: flex;
   align-items: center;
   font-size: ${typography.modal_title};
   font-weight: ${fonts.montserrat.normal};
+  color: ${colors.dark};
+`;
+
+const LogOutText = styled.h3`
+  display: flex;
+  align-items: center;
+  font-size: ${typography.modal_title};
+  font-weight: ${fonts.montserrat.semi_bold};
   color: ${colors.dark};
 `;
 
@@ -63,6 +71,7 @@ const S = {
   FooterText,
   CoinPriceLabel,
   WelcomeText,
+  LogOutText,
 };
 
 export default S;
