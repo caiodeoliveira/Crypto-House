@@ -1,7 +1,13 @@
 import ButtonProps from "./type";
 import S from "./styles";
 
-const Button = ({ type, onClick, disabled, children }: ButtonProps) => {
+export const Button = ({
+  type,
+  onClick,
+  disabled,
+  children,
+  margin,
+}: ButtonProps) => {
   const selectType = () => {
     switch (type) {
       case "recover_button":
@@ -20,9 +26,15 @@ const Button = ({ type, onClick, disabled, children }: ButtonProps) => {
             </S.LoginButton>
           </>
         );
+      case "log_out":
+        return (
+          <>
+            <S.LogoutButton onClick={onClick} style={{ margin: margin }}>
+              {children}
+            </S.LogoutButton>
+          </>
+        );
     }
   };
   return selectType();
 };
-
-export default Button;

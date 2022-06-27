@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { withStyles, ListItem } from "@material-ui/core";
 
 export const Container = styled.div`
   width: 100vw;
@@ -20,15 +19,17 @@ export const SignOffContainer = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  right: 35px;
-`;
+  right: 70px;
 
-export const SignOffButton = withStyles({
-  root: {
-    marginRight: "35px",
-    height: "100%",
-  },
-})(ListItem);
+  & button {
+    transition: 400ms ease-in-out;
+  }
+
+  & button:hover {
+    transform: translateX(15px);
+    transition: 400ms ease-in-out;
+  }
+`;
 
 export const WelcomeTextContainer = styled.div`
   display: flex;
