@@ -1,4 +1,4 @@
-type ButtonTypes = "submit" | "recover_button";
+type ButtonTypes = "submit" | "recover_button" | "log_out";
 
 export default interface ButtonProps {
   id?: string;
@@ -6,4 +6,5 @@ export default interface ButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   children?: React.ReactNode;
   disabled?: boolean;
+  margin?: string;
 }

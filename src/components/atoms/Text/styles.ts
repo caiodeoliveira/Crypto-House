@@ -58,7 +58,7 @@ const LogOutText = styled.h3`
   display: flex;
   align-items: center;
   font-size: ${typography.modal_title};
-  font-weight: ${fonts.montserrat.semi_bold};
+  font-weight: ${fonts.montserrat.normal};
   color: ${colors.dark};
 `;
 

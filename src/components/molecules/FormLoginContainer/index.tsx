@@ -1,7 +1,7 @@
 import S from "./styles";
 import Checkbox from "../../atoms/CheckBox";
 import Text from "../../atoms/Text";
-import Button from "../../atoms/Button";
+import { Button } from "../../atoms/Button";
 import {
   GoogleAuthProvider,
   getAuth,

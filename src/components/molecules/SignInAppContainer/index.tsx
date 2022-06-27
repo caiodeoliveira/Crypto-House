@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styles";
-import Button from "../../atoms/Button";
+import { Button } from "../../atoms/Button";
 import { useHistory } from "react-router-dom";
 
 export const SignInAppContainer = () => {

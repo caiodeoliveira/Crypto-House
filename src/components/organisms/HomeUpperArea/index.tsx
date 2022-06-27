@@ -5,8 +5,9 @@ import { CgMenuRound } from "react-icons/cg";
 import Text from "../../atoms/Text";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { SignInAppContainer } from "../../molecules/SignInAppContainer";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import Button from "../../atoms/Button";
+import { FiLogOut } from "react-icons/fi";
+import { BsFillDoorOpenFill } from "react-icons/bs";
+import { Button } from "../../atoms/Button";
 
 export const HomeUpperArea = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
@@ -24,6 +25,7 @@ export const HomeUpperArea = () => {
   const onSignOut = () => {
     signOut(auth);
     console.log("You Signed Off");
+    window.location.reload();
   };
 
   onAuthStateChanged(auth, (user) => {
@@ -61,9 +63,14 @@ export const HomeUpperArea = () => {
             <Text type={"log_out_text"} margin={"0 0 0 20px"}>
               Log Out
             </Text>
-            <S.SignOffButton button={true} onClick={() => onSignOut()}>
-              <ExitToAppIcon fontSize="large" />
-            </S.SignOffButton>
+            <BsFillDoorOpenFill size={29} />
+            <Button
+              type={"log_out"}
+              onClick={() => onSignOut()}
+              margin={"0 0 0 10px"}
+            >
+              <FiLogOut size={30} />
+            </Button>
           </S.SignOffContainer>
 
           <DrawerMenu

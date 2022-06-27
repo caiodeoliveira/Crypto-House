@@ -1,6 +1,7 @@
 import { colors } from "../../../styles/mixins";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import styled from "styled-components";
 
 // const ButtonBase = styled.button`
 //   color: ${colors.dark};
@@ -30,9 +31,15 @@ const LoginButton = withStyles({
   },
 })(Button);
 
+const LogoutButton = styled.button`
+  border: none;
+  background: none;
+`;
+
 const S = {
   RecoverButton,
   LoginButton,
+  LogoutButton,
 };
 
 export default S;
