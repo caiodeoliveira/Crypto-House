@@ -8,7 +8,7 @@
 * [Project demonstration](#project-demonstration)
 * [Access to the Project](#access-to-the-project)
 * [A few Technologies and concepts that will be in this project](#a-few-technologies-and-concepts-that-will-be-in-this-project)
-* [A Important Disclaimer To Make](#a-important-disclaimer-to-make)
+* [An Important Note To Make](#an-important-note-to-make)
 
 
 
@@ -19,12 +19,7 @@
 
 ## Project Demonstration:
 
-
-
-https://user-images.githubusercontent.com/59401287/172977539-09d3d6ee-7542-4622-8560-9654f5921b00.mp4
-
-
-
+https://user-images.githubusercontent.com/59401287/177014690-151db84c-53b8-4b1f-8f79-6f51547f292d.mp4
 
 ## Access to the Project:
 
@@ -44,6 +39,6 @@ https://user-images.githubusercontent.com/59401287/172977539-09d3d6ee-7542-4622-
           
 </div>
           
-## A Important Disclaimer To Make:
+## An Important Note To Make:
 
-### This project has alot of features so i work on it as much as i can to keep improving him. There is some features fakelly demonstrated in the video above just as example for some concepts and technologies i intend to do in the next days. when i finish the next version, the access link will be available in the Access to the Project Section. Thank you for the patience.
+### I work in this project as much as i can to keep improving him. I intend to continue the development here but theses days i received a Java demand to work in so i'm taking a break in his development to learn Java but i will back as soon as possible. when i finish the next version, the access link will be available in the Access to the Project Section. Thank you for the patience.
